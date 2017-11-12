@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header{
+    width: 100%;
+    height: 3em;
+    background: steelblue;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 3em;
+}
+.weather_data_container{
+    text-align: center;
+}
