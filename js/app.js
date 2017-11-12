@@ -17,8 +17,7 @@ const getcurrentWeather = (latitude, longitude, key) => {
   let xr = new XMLHttpRequest();
   xr.open(
     "GET",
-    `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${key}&units=metric`
-  );
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${key}&units=metric`);
   xr.onload = () => {
     let weatherData = JSON.parse(xr.responseText);
     console.log(weatherData);
