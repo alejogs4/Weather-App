@@ -14,3 +14,7 @@
 .weather_data_container{
     text-align: center;
 }
+.city{
+    width: 100%;
+    max-width: 600px;
+}

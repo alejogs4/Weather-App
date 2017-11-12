@@ -39,7 +39,7 @@ const displayWeatherData = (temp,maxTemp,minTemp,humidityTemp,localeWeather,img)
   let weatherContainer = document.createElement("div");
   weatherContainer.innerHTML = `
     <div class="weather_data_container">
-      <img src="${img}">
+      <img src="${img}" class="city">
       <p>La temperatura en ${localeWeather.name} a las ${hours}:${minutes} es</p>
       <h2>${temp} grados centigrados</h2>
     </div>
