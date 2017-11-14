@@ -2,6 +2,7 @@ let preload=document.getElementById('preload')
 preload.innerHTML='<i class="fa  fa-refresh  fa-spin  fa-5x"></i>'
 
 const currentPosition = () => {
+  alert('Para que la app pueda funcionar debes permitir la geolocalizacion')
   if (!navigator.geolocation) {
     console.log("The geolocation is not supported in this browser");
   }
@@ -30,6 +31,9 @@ const getcurrentWeather = (latitude, longitude, key) => {
       let image=`https://maps.googleapis.com/maps/api/streetview?size=600x300&location=${latitude},${longitude}&heading=151.78&pitch=-0.76&key=${apiMapsKey}`
       displayWeatherData(currentWeather.temp,currentWeather.temp_max,
         currentWeather.temp_min,currentWeather.humidity,weatherData,image);
+    }else if ( xr.status === 404 ) {
+      preload.innerHTML = ''
+      alert("El servidor no responde")
     }
   }
 
@@ -50,6 +54,7 @@ const displayWeatherData = (temp,maxTemp,minTemp,humidityTemp,localeWeather,img)
   let minutes=date.getMinutes()
   
   let weatherContainer = document.createElement("div");
+
   weatherContainer.innerHTML = `
     <div class="weather_data_container">
       <img src="${img}" class="city">
